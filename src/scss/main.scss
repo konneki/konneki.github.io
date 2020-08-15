@@ -1,13 +1,28 @@
-@import "~normalize.css";
+@import '~normalize.css';
 
-@import "_variables";
-@import "modules/hello.scss";
+@import url('https://fonts.googleapis.com/css2?family=Nunito:wght@300;600;700&family=Roboto+Mono&display=swap');
+
+@import '_variables';
+@import 'modules/hello.scss';
 
 body {
-  background: $wtf;
+  font-family: 'Nunito', sans-serif;
+  // font-family: 'Roboto Mono', monospace;
   color: #fff;
   display: flex;
   align-items: center;
   justify-content: center;
   min-height: 100vh;
+}
+
+.header {
+  &::before {
+    content: url(../assets/img/photo_desktop.png);
+  }
+}
+
+.header__heading {
+  padding: 16px 19px;
+  background-color: #1070ca;
+  border-radius: 16px;
 }
