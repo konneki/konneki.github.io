@@ -5,24 +5,74 @@
 @import '_variables';
 @import 'modules/hello.scss';
 
+$breakpoint-mobile: 425px;
+
+$default: #425a70;
+$dark: #234361;
+$blue: #1070ca;
+$link: #4da8ff;
+
 body {
   font-family: 'Nunito', sans-serif;
   // font-family: 'Roboto Mono', monospace;
-  color: #fff;
+  color: $default;
   display: flex;
   align-items: center;
   justify-content: center;
   min-height: 100vh;
+  padding: 64px 16px;
+  text-align: center;
+}
+a {
+  color: $link;
+  text-decoration: none;
+}
+.special {
+  color: $blue;
 }
 
 .header {
+  display: flex;
+  flex-direction: column;
   &::before {
     content: url(../assets/img/photo_desktop.png);
   }
-}
-
-.header__heading {
-  padding: 16px 19px;
-  background-color: #1070ca;
-  border-radius: 16px;
+  &__about {
+    &-description {
+      margin-bottom: 48px;
+      font-size: 16px;
+      font-weight: 300;
+      line-height: 32px;
+    }
+    &-head {
+      color: $dark;
+      font-weight: bold;
+      font-size: 26px;
+      line-height: 32px;
+    }
+    &-mail {
+      border-radius: 67px;
+      background-color: $link;
+      color: white;
+      padding: 4px 24px;
+      font-size: 20px;
+      line-height: 40px;
+      font-weight: bold;
+    }
+  }
+  &__heading {
+    color: white;
+    padding: 16px 19px;
+    background-color: #1070ca;
+    border-radius: 16px;
+  }
+  @media (max-width: $breakpoint-mobile) {
+    &::before {
+      content: url(../assets/img/photo_mobile.png);
+      padding: 34px 58px 0 58px;
+    }
+    &__heading {
+      display: none;
+    }
+  }
 }
