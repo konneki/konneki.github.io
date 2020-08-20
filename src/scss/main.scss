@@ -5,6 +5,32 @@
 @import '_variables';
 @import 'modules/hello.scss';
 
+@mixin mobile-header-200 {
+  font-weight: bold;
+  font-size: 26px;
+  line-height: 32px;
+}
+@mixin mobile-header-100 {
+  font-weight: bold;
+  font-size: 36px;
+  line-height: 48px;
+}
+@mixin mobile-text {
+  font-weight: 300; //light
+  font-size: 16px;
+  line-height: 32px;
+}
+@mixin mobile-bold-text {
+  font-weight: bold;
+  font-size: 16px;
+  line-height: 32px;
+}
+@mixin mobile-console {
+  font-size: 13px;
+  line-height: 24px;
+  font-family: Roboto Mono;
+}
+
 $breakpoint-mobile: 425px;
 
 $default: #425a70;
@@ -20,44 +46,44 @@ body {
   align-items: center;
   justify-content: center;
   min-height: 100vh;
-  padding: 64px 16px;
+  width: 100vw;
   text-align: center;
+  display: flex;
+  flex-direction: column;
 }
 a {
   color: $link;
   text-decoration: none;
+}
+.main {
+  margin: 0;
+  padding: 0;
+  width: 100vw;
 }
 .special {
   color: $blue;
 }
 
 .header {
-  display: flex;
-  flex-direction: column;
+  padding: 64px 16px 88px;
   &::before {
     content: url(../assets/img/photo_desktop.png);
   }
   &__about {
     &-description {
       margin-bottom: 48px;
-      font-size: 16px;
-      font-weight: 300;
-      line-height: 32px;
+      @include mobile-text();
     }
     &-head {
       color: $dark;
-      font-weight: bold;
-      font-size: 26px;
-      line-height: 32px;
+      @include mobile-header-200();
     }
     &-mail {
       border-radius: 67px;
       background-color: $link;
       color: white;
-      padding: 4px 24px;
-      font-size: 20px;
-      line-height: 40px;
-      font-weight: bold;
+      padding: 10px 24px;
+      @include mobile-bold-text();
     }
   }
   &__heading {
@@ -74,5 +100,15 @@ a {
     &__heading {
       display: none;
     }
+  }
+}
+
+.skills {
+  background-color: #1070ca;
+  padding: 64px 16px 88px;
+  &__heading {
+    @include mobile-header-100();
+    color: white;
+    margin-bottom: 64px;
   }
 }
