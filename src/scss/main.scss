@@ -31,6 +31,42 @@
   font-family: Roboto Mono;
 }
 
+@mixin header-100 {
+  font-weight: bold;
+  font-size: 48px;
+  line-height: 56px;
+}
+@mixin header-200 {
+  font-weight: bold;
+  font-size: 32px;
+  line-height: 40px;
+}
+@mixin header-300 {
+  font-weight: bold;
+  font-size: 24px;
+  line-height: 44px;
+}
+@mixin text {
+  font-weight: 300; //light
+  font-size: 20px;
+  line-height: 40px;
+}
+@mixin bold-text {
+  font-weight: 300; //light
+  font-size: 20px;
+  line-height: 40px;
+}
+@mixin list {
+  font-weight: 600; //semibold
+  font-size: 16px;
+  line-height: 24px;
+}
+@mixin console {
+  font-size: 16px;
+  line-height: 24px;
+  font-family: Roboto Mono;
+}
+
 $breakpoint-mobile: 425px;
 
 $default: #425a70;
@@ -54,6 +90,9 @@ body {
 a {
   color: $link;
   text-decoration: none;
+}
+li {
+  text-align: left;
 }
 .main {
   margin: 0;
@@ -106,9 +145,69 @@ a {
 .skills {
   background-color: #1070ca;
   padding: 64px 16px 88px;
+  color: white;
+  &__block {
+    margin: 0 0 64px 0;
+    &:last-child {
+      margin: 0;
+    }
+  }
   &__heading {
     @include mobile-header-100();
-    color: white;
     margin-bottom: 64px;
+  }
+  &__subheading {
+    @include header-300();
+    display: flex;
+    flex-direction: column;
+    margin: 0 0 24px 0;
+    &--arm {
+      &::before {
+        content: '💪🏻';
+        font-size: 64px;
+        line-height: 72px;
+        margin-bottom: 16px;
+      }
+    }
+    &--hat {
+      &::before {
+        content: '🎓';
+        font-size: 64px;
+        line-height: 72px;
+        margin-bottom: 16px;
+      }
+    }
+    &--thought {
+      &::before {
+        content: '🤔';
+        font-size: 64px;
+        line-height: 72px;
+        margin-bottom: 16px;
+      }
+    }
+  }
+  &__list {
+    list-style-type: none;
+    padding: 0;
+    @include list();
+    &--checkmark > li {
+      &::before {
+        content: '✓';
+        color: #06c847;
+        padding: 0 12px 0 0;
+      }
+    }
+    &--checkmark-white > li {
+      &::before {
+        content: '✓';
+        padding: 0 12px 0 0;
+      }
+    }
+    &--dot > li {
+      &::before {
+        content: '○';
+        padding: 0 12px 0 0;
+      }
+    }
   }
 }
