@@ -94,6 +94,11 @@ a {
 li {
   text-align: left;
 }
+h1,
+h2,
+h3 {
+  color: $dark;
+}
 .main {
   margin: 0;
   padding: 0;
@@ -111,18 +116,17 @@ li {
   &__about {
     &-description {
       margin-bottom: 48px;
-      @include mobile-text();
+      @include mobile-text;
     }
     &-head {
-      color: $dark;
-      @include mobile-header-200();
+      @include mobile-header-200;
     }
     &-mail {
       border-radius: 67px;
       background-color: $link;
       color: white;
       padding: 10px 24px;
-      @include mobile-bold-text();
+      @include mobile-bold-text;
     }
   }
   &__heading {
@@ -153,11 +157,13 @@ li {
     }
   }
   &__heading {
-    @include mobile-header-100();
+    @include mobile-header-100;
     margin-bottom: 64px;
+    color: white;
   }
   &__subheading {
-    @include header-300();
+    @include header-300;
+    color: white;
     display: flex;
     flex-direction: column;
     margin: 0 0 24px 0;
@@ -189,25 +195,65 @@ li {
   &__list {
     list-style-type: none;
     padding: 0;
-    @include list();
+    @include list;
+    &-item {
+      display: block;
+    }
     &--checkmark > li {
       &::before {
-        content: '✓';
-        color: #06c847;
+        content: url(../assets/img/small-tick.svg);
         padding: 0 12px 0 0;
       }
     }
     &--checkmark-white > li {
       &::before {
-        content: '✓';
+        content: url(../assets/img/small-tick-white.svg);
         padding: 0 12px 0 0;
       }
     }
     &--dot > li {
       &::before {
-        content: '○';
+        content: '∙';
         padding: 0 12px 0 0;
       }
     }
+  }
+}
+
+.projects {
+  padding: 64px 16px 88px;
+  &__heading {
+    @include mobile-header-100;
+  }
+  &__description {
+    @include mobile-text;
+  }
+}
+
+.contact {
+  padding: 64px 16px 88px;
+  background-color: #dbeaf7;
+  &__heading {
+    @include mobile-header-100;
+  }
+  &__description {
+    @include mobile-text;
+    margin: 0 0 56px;
+  }
+  &__socials {
+    margin: 0 auto 64px;
+    display: flex;
+    justify-content: space-between;
+    width: 192px;
+  }
+  &__icon {
+    cursor: pointer;
+    background-color: white;
+    width: 48px;
+    height: 48px;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
   }
 }

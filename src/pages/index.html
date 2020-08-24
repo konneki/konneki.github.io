@@ -157,20 +157,22 @@
         </h2>
         <p class="header__about-description">
           You might be interested in checking the list of
-          <a href="#">my skills</a>. Don’t forget to have a glimpse at
-          <a href="#">my projects</a>. Currently I’m looking for a new
-          challenges so if you have one - <a href="#">contact me</a> 😊
+          <a href="#skills">my skills</a>. Don’t forget to have a glimpse at
+          <a href="#projects">my projects</a>. Currently I’m looking for a new
+          challenges so if you have one - <a href="#contact">contact me</a> 😊
         </p>
-        <a class="header__about-mail" href="#">konnekdaniel@gmail.com</a>
+        <a class="header__about-mail" href="mailto:konnekdaniel@gmail.com"
+          >konnekdaniel@gmail.com</a
+        >
       </section>
     </header>
     <main class="main">
-      <section class="skills">
-        <h1 class="skills__heading">My skills</h1>
+      <section class="skills" id="skills">
+        <h2 class="skills__heading">My skills</h2>
         <article class="skills__block">
-          <h2 class="skills__subheading skills__subheading--arm">
+          <h3 class="skills__subheading skills__subheading--arm">
             Working knowledge
-          </h2>
+          </h3>
           <ul class="skills__list skills__list--checkmark">
             <li class="skills__list-item">Semantic HTML5</li>
             <li class="skills__list-item">Flexbox</li>
@@ -184,9 +186,9 @@
           </ul>
         </article>
         <article class="skills__block">
-          <h2 class="skills__subheading skills__subheading--thought">
+          <h3 class="skills__subheading skills__subheading--thought">
             Know something about
-          </h2>
+          </h3>
           <ul class="skills__list skills__list--checkmark-white">
             <li class="skills__list-item">JavaScript ES5/ES6 + features</li>
             <li class="skills__list-item">CSS animations</li>
@@ -198,9 +200,9 @@
           </ul>
         </article>
         <article class="skills__block">
-          <h2 class="skills__subheading skills__subheading--hat">
+          <h3 class="skills__subheading skills__subheading--hat">
             Want to learn
-          </h2>
+          </h3>
           <ul class="skills__list skills__list--dot">
             <li class="skills__list-item">React JS</li>
             <li class="skills__list-item">Node JS</li>
@@ -211,6 +213,45 @@
             <li class="skills__list-item">Electron</li>
           </ul>
         </article>
+      </section>
+      <section class="projects" id="projects">
+        <h2 class="projects__heading">Recent projects</h2>
+        <p class="projects__description">
+          I started my frontend developer path in 2020. Since then, I’ve built
+          some projects. Here’s the list of the things I’ve done so far.
+        </p>
+      </section>
+      <section class="contact" id="contact">
+        <h2 class="contact__heading">Contact me</h2>
+        <p class="contact__description">
+          I’m open for new opportunities. If you have one for me we should talk!
+        </p>
+        <article class="contact__socials">
+          <a
+            class="contact__icon"
+            href="https://github.com/konneki"
+            target="_blank"
+          >
+            <img src="../assets/img/GitHub.png" />
+          </a>
+          <a
+            class="contact__icon"
+            href="https://www.instagram.com/konneki/"
+            target="_blank"
+          >
+            <img src="../assets/img/Instagram.png" />
+          </a>
+          <a
+            class="contact__icon"
+            href="https://www.facebook.com/ac.konneki"
+            target="_blank"
+          >
+            <img src="../assets/img/FB.png" />
+          </a>
+        </article>
+        <a class="header__about-mail" href="mailto:konnekdaniel@gmail.com"
+          >konnekdaniel@gmail.com</a
+        >
       </section>
     </main>
   </body>
