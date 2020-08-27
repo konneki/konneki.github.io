@@ -52,7 +52,7 @@
   line-height: 40px;
 }
 @mixin bold-text {
-  font-weight: 300; //light
+  font-weight: bold;
   font-size: 20px;
   line-height: 40px;
 }
@@ -67,12 +67,31 @@
   font-family: Roboto Mono;
 }
 
-$breakpoint-mobile: 426px;
+@mixin mail {
+  border-radius: 67px;
+  background-color: $link;
+  color: white;
+  padding: 9px 24px;
+}
+
+$breakpoint-mobile: 769px;
 
 $default: #425a70;
 $dark: #234361;
 $blue: #1070ca;
 $link: #4da8ff;
+
+@keyframes wave {
+  0% {
+    transform: rotate(0deg);
+  }
+  50% {
+    transform: rotate(15deg);
+  }
+  100% {
+    transform: rotate(0deg);
+  }
+}
 
 body {
   font-family: 'Nunito', sans-serif;
@@ -123,10 +142,7 @@ h3 {
       @include mobile-header-200;
     }
     &-mail {
-      border-radius: 67px;
-      background-color: $link;
-      color: white;
-      padding: 10px 24px;
+      @include mail;
       @include mobile-bold-text;
     }
   }
@@ -138,12 +154,40 @@ h3 {
       content: url(../assets/img/photo_desktop.png);
       padding: 50px 0 72px;
     }
+    &__about {
+      width: 830px;
+      // &::before {
+      //   content: url(../assets/img/{.svg);
+      //   position: absolute;
+      // }
+      // &::after {
+      //   content: url(../assets/img/}.svg);
+      //   position: absolute;
+      // }
+      &-head {
+        @include header-200;
+      }
+      &-description {
+        @include text;
+      }
+      &-mail {
+        @include bold-text;
+        padding-top: 11px;
+        padding-bottom: 10px;
+      }
+    }
     &__heading {
+      &--wave {
+        display: inline-block;
+        animation: wave 1.5s ease-in-out infinite;
+        transform-origin: bottom 40px;
+      }
       &::before {
         content: url(../assets/img/Speech_cloud.svg);
         position: absolute;
         bottom: -30px;
       }
+      @include header-200;
       display: unset;
       color: white;
       padding: 16px 19px;
@@ -227,6 +271,23 @@ h3 {
       }
     }
   }
+  @media (min-width: $breakpoint-mobile) {
+    &__flex {
+      display: flex;
+      justify-content: space-around;
+      width: 1184px;
+      margin: 0 auto;
+    }
+    &__block {
+      width: 379px;
+    }
+    &__heading {
+      @include header-100;
+    }
+    &__subheading {
+      @include header-300;
+    }
+  }
 }
 
 .projects {
@@ -236,6 +297,14 @@ h3 {
   }
   &__description {
     @include mobile-text;
+  }
+  @media (min-width: $breakpoint-mobile) {
+    &__heading {
+      @include header-100;
+    }
+    &__description {
+      @include text;
+    }
   }
 }
 
@@ -255,6 +324,10 @@ h3 {
     justify-content: space-between;
     width: 192px;
   }
+  &__mail {
+    @include mail;
+    @include mobile-bold-text;
+  }
   &__icon {
     cursor: pointer;
     background-color: white;
@@ -264,5 +337,29 @@ h3 {
     display: flex;
     justify-content: center;
     align-items: center;
+  }
+  @media (min-width: $breakpoint-mobile) {
+    &__description {
+      @include text;
+      margin: 0 0 128px;
+    }
+    &__flex {
+      display: flex;
+      justify-content: space-around;
+      align-items: center;
+      width: 585px;
+      margin: 0 auto 88px;
+    }
+    &__heading {
+      @include header-100;
+    }
+    &__mail {
+      @include bold-text;
+      padding-top: 4px;
+      padding-bottom: 4px;
+    }
+    &__socials {
+      margin: 0;
+    }
   }
 }
