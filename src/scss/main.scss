@@ -67,7 +67,7 @@
   font-family: Roboto Mono;
 }
 
-$breakpoint-mobile: 425px;
+$breakpoint-mobile: 426px;
 
 $default: #425a70;
 $dark: #234361;
@@ -111,7 +111,8 @@ h3 {
 .header {
   padding: 64px 16px 88px;
   &::before {
-    content: url(../assets/img/photo_desktop.png);
+    content: url(../assets/img/photo_mobile.png);
+    padding: 34px 58px 0 58px;
   }
   &__about {
     &-description {
@@ -130,18 +131,26 @@ h3 {
     }
   }
   &__heading {
-    color: white;
-    padding: 16px 19px;
-    background-color: #1070ca;
-    border-radius: 16px;
+    display: none;
   }
-  @media (max-width: $breakpoint-mobile) {
+  @media (min-width: $breakpoint-mobile) {
     &::before {
-      content: url(../assets/img/photo_mobile.png);
-      padding: 34px 58px 0 58px;
+      content: url(../assets/img/photo_desktop.png);
+      padding: 50px 0 72px;
     }
     &__heading {
-      display: none;
+      &::before {
+        content: url(../assets/img/Speech_cloud.svg);
+        position: absolute;
+        bottom: -30px;
+      }
+      display: unset;
+      color: white;
+      padding: 16px 19px;
+      background-color: #1070ca;
+      border-radius: 16px;
+      position: absolute;
+      top: 34px;
     }
   }
 }
