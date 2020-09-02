@@ -85,7 +85,13 @@ $link: #4da8ff;
   0% {
     transform: rotate(0deg);
   }
+  35% {
+    transform: rotate(15deg);
+  }
   50% {
+    transform: rotate(5deg);
+  }
+  65% {
     transform: rotate(15deg);
   }
   100% {
@@ -251,6 +257,10 @@ h3 {
     @include list;
     &-item {
       display: block;
+      margin-bottom: 16px;
+      &:last-child {
+        margin-bottom: 0;
+      }
     }
     &--checkmark > li {
       &::before {
@@ -280,6 +290,9 @@ h3 {
     }
     &__block {
       width: 379px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
     }
     &__heading {
       @include header-100;
