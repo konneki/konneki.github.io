@@ -133,6 +133,85 @@ h3 {
   color: $blue;
 }
 
+.console {
+  width: 287px;
+  height: 320px;
+  border-radius: 16px;
+  background-color: #212528;
+  position: relative;
+  &__bar {
+    background-color: #1e1e1e;
+    border-radius: 16px 16px 0 0;
+    height: 40px;
+  }
+  &__body {
+    margin: 72px 16px 0 16px;
+    display: flex;
+  }
+  &__dot {
+    position: absolute;
+    left: 16px;
+    top: 16px;
+    display: flex;
+    &-item {
+      margin-right: 8px;
+      background-color: #464a4d;
+      width: 8px;
+      height: 8px;
+      border-radius: 50%;
+    }
+  }
+  &__list {
+    @include mobile-console;
+    text-align: left;
+    list-style-type: none;
+    color: #a3a3a3;
+    padding: 0;
+    &--left > li {
+      color: #808082;
+      text-align: right;
+    }
+    &--right {
+      margin-left: 8px;
+    }
+    &-item {
+      margin-bottom: 8px;
+      &:last-child {
+        margin-bottom: 0;
+      }
+      &--invisible {
+        visibility: hidden;
+      }
+      &--special {
+        color: white;
+        font-weight: bold;
+      }
+      &--link {
+        text-decoration: underline;
+      }
+    }
+  }
+  &__logo {
+    position: absolute;
+    top: 64px;
+    left: 16px;
+  }
+  @media (min-width: $breakpoint-mobile) {
+    width: 548px;
+    height: 300px;
+    &__body {
+      margin: 66px 32px 0 32px;
+    }
+    &__list {
+      @include console;
+    }
+    &__logo {
+      top: 58px;
+      left: 32px;
+    }
+  }
+}
+
 .header {
   padding: 64px 16px 88px;
   &::before {
@@ -305,18 +384,38 @@ h3 {
 
 .projects {
   padding: 64px 16px 88px;
+  &__flex {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  &__grid {
+    display: grid;
+    grid-gap: 24px;
+    grid-template-columns: 1fr;
+  }
   &__heading {
     @include mobile-header-100;
   }
   &__description {
     @include mobile-text;
+    margin-bottom: 46px;
   }
   @media (min-width: $breakpoint-mobile) {
+    &__flex {
+      width: 1184px;
+      margin: 0 auto;
+    }
+    &__grid {
+      grid-template-columns: 1fr 1fr;
+    }
     &__heading {
       @include header-100;
     }
     &__description {
       @include text;
+      width: 782px;
+      margin: 0 auto 128px;
     }
   }
 }
