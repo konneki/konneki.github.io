@@ -161,6 +161,9 @@ h3 {
       border-radius: 50%;
     }
   }
+  &__inner {
+    display: flex;
+  }
   &__list {
     @include mobile-console;
     text-align: left;
@@ -170,11 +173,14 @@ h3 {
     &--left > li {
       color: #808082;
       text-align: right;
+      width: 95px;
     }
     &--right {
       margin-left: 8px;
     }
     &-item {
+      max-height: 48px;
+      overflow: scroll;
       margin-bottom: 8px;
       &:last-child {
         margin-bottom: 0;
@@ -200,10 +206,13 @@ h3 {
     width: 548px;
     height: 300px;
     &__body {
-      margin: 66px 32px 0 32px;
+      margin: 46px 32px 0 32px;
     }
     &__list {
       @include console;
+      &--left > li {
+        width: 120px;
+      }
     }
     &__logo {
       top: 58px;
