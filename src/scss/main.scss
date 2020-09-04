@@ -250,14 +250,19 @@ h3 {
     }
     &__about {
       width: 830px;
-      // &::before {
-      //   content: url(../assets/img/{.svg);
-      //   position: absolute;
-      // }
-      // &::after {
-      //   content: url(../assets/img/}.svg);
-      //   position: absolute;
-      // }
+      position: relative;
+      &::before {
+        content: url(../assets/img/{.svg);
+        position: absolute;
+        left: -100px;
+        top: 0;
+      }
+      &::after {
+        content: url(../assets/img/}.svg);
+        position: absolute;
+        right: -100px;
+        top: 0;
+      }
       &-head {
         @include header-200;
       }
