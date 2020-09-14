@@ -1,0 +1,96 @@
+.skills {
+  background-color: #1070ca;
+  padding: 64px 16px 88px;
+  color: white;
+  &__block {
+    margin: 0 0 64px 0;
+    &:last-child {
+      margin: 0;
+    }
+  }
+  &__heading {
+    @include mobile-header-100;
+    margin-bottom: 64px;
+    color: white;
+  }
+  &__subheading {
+    @include header-300;
+    color: white;
+    display: flex;
+    flex-direction: column;
+    margin: 0 0 24px 0;
+    &--arm {
+      &::before {
+        content: '💪🏻';
+        font-size: 64px;
+        line-height: 72px;
+        margin-bottom: 16px;
+      }
+    }
+    &--hat {
+      &::before {
+        content: '🎓';
+        font-size: 64px;
+        line-height: 72px;
+        margin-bottom: 16px;
+      }
+    }
+    &--thought {
+      &::before {
+        content: '🤔';
+        font-size: 64px;
+        line-height: 72px;
+        margin-bottom: 16px;
+      }
+    }
+  }
+  &__list {
+    list-style-type: none;
+    padding: 0;
+    @include list;
+    &-item {
+      display: block;
+      margin-bottom: 16px;
+      &:last-child {
+        margin-bottom: 0;
+      }
+    }
+    &--checkmark > li {
+      &::before {
+        content: url(../assets/img/small-tick.svg);
+        padding: 0 12px 0 0;
+      }
+    }
+    &--checkmark-white > li {
+      &::before {
+        content: url(../assets/img/small-tick-white.svg);
+        padding: 0 12px 0 0;
+      }
+    }
+    &--dot > li {
+      &::before {
+        content: '∙';
+        padding: 0 12px 0 0;
+      }
+    }
+  }
+  @media (min-width: $breakpoint-mobile) {
+    &__flex {
+      display: flex;
+      justify-content: space-around;
+      margin: 0 auto;
+    }
+    &__block {
+      width: 379px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+    &__heading {
+      @include header-100;
+    }
+    &__subheading {
+      @include header-300;
+    }
+  }
+}

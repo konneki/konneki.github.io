@@ -1,1 +1,76 @@
-$wtf: #2D2241;
+$breakpoint-mobile: 769px;
+
+$default: #425a70;
+$dark: #234361;
+$blue: #1070ca;
+$link: #4da8ff;
+$picture: #f6f9fd;
+
+@mixin mobile-header-200 {
+  font-weight: bold;
+  font-size: 26px;
+  line-height: 32px;
+}
+@mixin mobile-header-100 {
+  font-weight: bold;
+  font-size: 36px;
+  line-height: 48px;
+}
+@mixin mobile-text {
+  font-weight: 300; //light
+  font-size: 16px;
+  line-height: 32px;
+}
+@mixin mobile-bold-text {
+  font-weight: bold;
+  font-size: 16px;
+  line-height: 32px;
+}
+@mixin mobile-console {
+  font-size: 13px;
+  line-height: 24px;
+  font-family: Roboto Mono;
+}
+
+@mixin header-100 {
+  font-weight: bold;
+  font-size: 48px;
+  line-height: 56px;
+}
+@mixin header-200 {
+  font-weight: bold;
+  font-size: 32px;
+  line-height: 40px;
+}
+@mixin header-300 {
+  font-weight: bold;
+  font-size: 24px;
+  line-height: 44px;
+}
+@mixin text {
+  font-weight: 300; //light
+  font-size: 20px;
+  line-height: 40px;
+}
+@mixin bold-text {
+  font-weight: bold;
+  font-size: 20px;
+  line-height: 40px;
+}
+@mixin list {
+  font-weight: 600; //semibold
+  font-size: 16px;
+  line-height: 24px;
+}
+@mixin console {
+  font-size: 16px;
+  line-height: 24px;
+  font-family: Roboto Mono;
+}
+
+@mixin mail {
+  border-radius: 67px;
+  background-color: $link;
+  color: white;
+  padding: 9px 24px;
+}

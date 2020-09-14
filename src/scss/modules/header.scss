@@ -1,0 +1,99 @@
+@keyframes wave {
+  0% {
+    transform: rotate(0deg);
+  }
+  35% {
+    transform: rotate(15deg);
+  }
+  50% {
+    transform: rotate(5deg);
+  }
+  65% {
+    transform: rotate(15deg);
+  }
+  100% {
+    transform: rotate(0deg);
+  }
+}
+
+.header {
+  padding: 64px 16px 88px;
+  &__picture {
+    box-sizing: unset;
+    border: 16px solid $picture;
+    border-radius: 50%;
+    width: 96px;
+    height: 96px;
+  }
+  &__about {
+    margin: 0 auto;
+    &-description {
+      margin-bottom: 48px;
+      @include mobile-text;
+    }
+    &-head {
+      @include mobile-header-200;
+    }
+    &-mail {
+      @include mail;
+      @include mobile-bold-text;
+    }
+  }
+  &__heading {
+    display: none;
+  }
+  @media (min-width: $breakpoint-mobile) {
+    &__picture {
+      border-width: 24px;
+      width: 178px;
+      height: 178px;
+    }
+    &__about {
+      width: 830px;
+      position: relative;
+      &::before {
+        content: url(../assets/img/{.svg);
+        position: absolute;
+        left: -100px;
+        top: 0;
+      }
+      &::after {
+        content: url(../assets/img/}.svg);
+        position: absolute;
+        right: -100px;
+        top: 0;
+      }
+      &-head {
+        @include header-200;
+      }
+      &-description {
+        @include text;
+      }
+      &-mail {
+        @include bold-text;
+        padding-top: 11px;
+        padding-bottom: 10px;
+      }
+    }
+    &__heading {
+      &--wave {
+        display: inline-block;
+        animation: wave 1.5s ease-in-out infinite;
+        transform-origin: bottom 40px;
+      }
+      &::before {
+        content: url(../assets/img/Speech_cloud.svg);
+        position: absolute;
+        bottom: -30px;
+      }
+      @include header-200;
+      display: unset;
+      color: white;
+      padding: 16px 19px;
+      background-color: #1070ca;
+      border-radius: 16px;
+      position: absolute;
+      top: 34px;
+    }
+  }
+}
