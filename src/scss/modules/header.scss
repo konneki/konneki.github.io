@@ -37,6 +37,7 @@
     &-mail {
       @include mail;
       @include mobile-bold-text;
+      text-decoration: none;
     }
   }
   &__heading {

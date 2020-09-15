@@ -17,6 +17,7 @@
   &__mail {
     @include mail;
     @include mobile-bold-text;
+    text-decoration: none;
   }
   &__icon {
     cursor: pointer;
