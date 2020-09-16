@@ -1,9 +1,9 @@
 import '../scss/main.scss';
 
-console.log('Hello and welcome to my site! 🚀');
+console.log('Hello, I am Daniel welcome to my portfolio page! 🚀');
 
 fetch(
-  'https://api.github.com/users/konneki/repos?sort=created&type=public&direction=asc'
+  'https://api.github.com/users/konneki/repos?sort=updated&type=public&direction=dsc'
 )
   .then((resp) => resp.json())
   .then((resp) => {
@@ -58,7 +58,8 @@ fetch(
     }
   })
   .catch((error) => {
-    console.log('There is an error somwhere');
-
+    console.log(
+      'There is an error somwhere, look at the line below mate, maybe you can figure it out 🤯'
+    );
     console.log(error);
   });
