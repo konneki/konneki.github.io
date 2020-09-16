@@ -24,32 +24,38 @@
     border-radius: 50%;
     width: 96px;
     height: 96px;
+    @media (min-width: $desktop) {
+      border-width: 24px;
+      width: 178px;
+      height: 178px;
+    }
   }
   &__about {
     margin: 0 auto;
     &-description {
       margin-bottom: 48px;
       @include mobile-text;
+      @media (min-width: $desktop) {
+        @include text;
+      }
     }
     &-head {
       @include mobile-header-200;
+      @media (min-width: $desktop) {
+        @include header-200;
+      }
     }
     &-mail {
       @include mail;
       @include mobile-bold-text;
       text-decoration: none;
+      @media (min-width: $desktop) {
+        @include bold-text;
+        padding-top: 11px;
+        padding-bottom: 10px;
+      }
     }
-  }
-  &__heading {
-    display: none;
-  }
-  @media (min-width: $breakpoint-mobile) {
-    &__picture {
-      border-width: 24px;
-      width: 178px;
-      height: 178px;
-    }
-    &__about {
+    @media (min-width: $desktop) {
       width: 830px;
       position: relative;
       &::before {
@@ -64,19 +70,11 @@
         right: -100px;
         top: 0;
       }
-      &-head {
-        @include header-200;
-      }
-      &-description {
-        @include text;
-      }
-      &-mail {
-        @include bold-text;
-        padding-top: 11px;
-        padding-bottom: 10px;
-      }
     }
-    &__heading {
+  }
+  &__heading {
+    display: none;
+    @media (min-width: $desktop) {
       &--wave {
         display: inline-block;
         animation: wave 1.5s ease-in-out infinite;
@@ -91,7 +89,7 @@
       display: unset;
       color: white;
       padding: 16px 19px;
-      background-color: #1070ca;
+      background-color: $blue;
       border-radius: 16px;
       position: absolute;
       top: 34px;
