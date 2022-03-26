@@ -63,3 +63,5 @@ fetch(
     );
     console.log(error);
   });
+
+  console.log('Adrian będzie się uczył programować')
