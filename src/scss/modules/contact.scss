@@ -1,6 +1,6 @@
 .contact {
   padding: 64px 16px 88px;
-  background-color: #dbeaf7;
+  background-color: $lighterBlue;
   &__heading {
     @include mobile-header-100;
     @media (min-width: $breakpoint-mobile) {
