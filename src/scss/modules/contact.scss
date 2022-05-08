@@ -47,6 +47,10 @@
     align-items: center;
     filter: drop-shadow(0px 4px 16px rgba(0, 0, 0, 0.25));
   }
+  &__icon img {
+    width: 26px;
+    height: 26px;
+  }
   @media (min-width: $breakpoint-mobile) {
     &__flex {
       display: flex;
