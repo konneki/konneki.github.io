@@ -1,6 +1,6 @@
 import '../scss/main.scss';
 
-console.log('Hello, I am Daniel welcome to my portfolio page! 🚀');
+console.log("Hello, I'm konneki welcome to my portfolio page! 🚀");
 
 fetch(
   'https://api.github.com/users/konneki/repos?sort=updated&type=public&direction=dsc'
@@ -8,7 +8,7 @@ fetch(
   .then((resp) => resp.json())
   .then((resp) => {
     for (let repo of resp) {
-      const {name, description, homepage, html_url} = repo;
+      const { name, description, homepage, html_url } = repo;
       const grid = document.querySelector('.projects__grid--js');
       const template = `<article class="console">
               <div class="console__bar">
@@ -33,9 +33,9 @@ fetch(
                target="_blank"
                rel="noopener noreferrer"
                class="console__link"
-               href="${homepage}"
+               href="${homepage ? homepage : null}"
                title="${name} - demo"
-               >see_here</a
+               >${homepage ? 'see_here' : 'no_demo_available'}</a
              >&gt;</span
            >
          </p>
@@ -63,5 +63,3 @@ fetch(
     );
     console.log(error);
   });
-
-  console.log('Adrian będzie się uczył programować')

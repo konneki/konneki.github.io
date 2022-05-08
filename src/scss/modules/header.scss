@@ -1,3 +1,5 @@
+@import '_variables';
+
 @keyframes wave {
   0% {
     transform: rotate(0deg);
@@ -89,7 +91,7 @@
       display: unset;
       color: white;
       padding: 16px 19px;
-      background-color: $blue;
+      background-color: $crimson;
       border-radius: 16px;
       position: absolute;
       top: 34px;
