@@ -33,7 +33,7 @@ fetch(
                target="_blank"
                rel="noopener noreferrer"
                class="console__link"
-               href="${homepage ? homepage : null}"
+               ${homepage ? 'href="' + homepage + '"' : ''}
                title="${name} - demo"
                >${homepage ? 'see_here' : 'no_demo_available'}</a
              >&gt;</span

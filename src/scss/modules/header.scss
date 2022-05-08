@@ -1,4 +1,4 @@
-@import '_variables';
+@import '../variables';
 
 @keyframes wave {
   0% {
@@ -61,13 +61,15 @@
       width: 830px;
       position: relative;
       &::before {
-        content: url(../assets/img/{.svg);
+        content: url(../assets/img/openbrace.svg);
+        min-width: 83px;
         position: absolute;
         left: -100px;
         top: 0;
       }
       &::after {
-        content: url(../assets/img/}.svg);
+        content: url(../assets/img/closebrace.svg);
+        min-width: 83px;
         position: absolute;
         right: -100px;
         top: 0;
@@ -84,8 +86,9 @@
       }
       &::before {
         content: url(../assets/img/Speech_cloud.svg);
+        min-width: 20px;
         position: absolute;
-        bottom: -30px;
+        bottom: -35px;
       }
       @include header-200;
       display: unset;
