@@ -10,7 +10,8 @@ fetch(
     for (let repo of resp) {
       const { name, description, homepage, html_url } = repo;
       const grid = document.querySelector('.projects__grid--js');
-      const template = `<article class="console">
+      const template = description
+        ? `<article class="console">
               <div class="console__bar">
                 <span class="console__dot"></span>
                 <span class="console__dot"></span>
@@ -24,7 +25,11 @@ fetch(
          </h3>
          <p class="console__grid console__grid--description">
            <span class="console__label">description:</span
-           ><span>${description}</span>
+           ><span>${
+             description.length < 100
+               ? description
+               : description.slice(0, 100) + '…'
+           }</span>
          </p>
          <p class="console__grid">
            <span class="console__label">demo:</span
@@ -53,13 +58,14 @@ fetch(
            </span>
          </p>
             </div>
-          </article>`;
+          </article>`
+        : '';
       grid.innerHTML += template;
     }
   })
   .catch((error) => {
     console.log(
-      'There is an error somwhere, look at the line below mate, maybe you can figure it out 🤯'
+      'There is an error somewhere, look at the log below mate, maybe you can figure it out 🤯'
     );
     console.log(error);
   });
