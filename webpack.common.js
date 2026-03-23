@@ -7,7 +7,7 @@ module.exports = {
     index: './src/js/index.js',
   },
   output: {
-    filename: '[name].[hash:8].js',
+    filename: '[name].[contenthash:8].js',
     path: __dirname + '/dist',
   },
   module: {
@@ -26,7 +26,7 @@ module.exports = {
         test: /\.html$/i,
         loader: 'html-loader',
         options: {
-          attributes: {
+          sources: {
             list: [
               {
                 tag: 'img',
@@ -44,14 +44,10 @@ module.exports = {
       },
       {
         test: /\.(png|jpe?g|gif|svg)$/i,
-        use: [
-          {
-            loader: 'file-loader',
-            options: {
-              name: 'img/[name].[hash:8].[ext]',
-            },
-          },
-        ],
+        type: 'asset/resource',
+        generator: {
+          filename: 'img/[name].[contenthash:8][ext]'
+        }
       },
     ],
   },
